@@ -1,7 +1,7 @@
 <template>
-  <table>
+  <table class="rounded-lg table-fixed shadow-2xl">
     <thead>
-      <tr class="bg-gray-100 border-b-2 border-gray-400">
+      <tr class="bg-green-400  border-b-2 border-gray-400">
         <th></th>
         <th :class="{ up: this.sortOrder === 1, down: this.sortOrder === -1 }">
           <span class="underline cursor-pointer" @click="changeSortOrder">Ranking</span>
@@ -12,7 +12,7 @@
         <th>Variación 24hs</th>
         <td class="hidden sm:block">
           <input
-            class="bg-gray-100 focus:outline-none border-b border-gray-400 py-2 px-4 block w-full appearance-none leading-normal"
+            class=" rounded-full bg-gray-100 focus:outline-none border-b border-gray-400 py-2 px-4 block w-full appearance-none leading-normal"
             id="filter"
             placeholder="Buscar..."
             type="text"
@@ -27,7 +27,7 @@
         :key="a.id"
         class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100"
       >
-        <td>
+        <td class="group-hover:bg-white ">
           <img
             class="w-6 h-6"
             :src="
@@ -121,11 +121,11 @@ export default {
 
 <style scoped>
 .up::before {
-  content: '👆';
+  content: '▲';
 }
 
 .down::before {
-  content: '👇';
+  content: '▼';
 }
 
 td {
